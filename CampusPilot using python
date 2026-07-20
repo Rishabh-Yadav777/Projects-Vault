@@ -1,0 +1,24 @@
+students = []
+      
+      while True:
+          print("\n===== CampusPilot =====")
+          print("1. Add Student")
+          print("2. View Students")
+          print("3. Exit")
+          
+              choice = input("Choice: ")
+          
+              if choice == "1":
+                name = input("Name: ")
+                roll = input("Roll No: ")
+                students.append({"name": name, "roll": roll})
+        
+            elif choice == "2":
+                if not students:
+                    print("No student records.")
+                else:
+                    for s in students:
+                        print(f"{s['roll']} - {s['name']}")
+    
+    elif choice == "3":
+        break
