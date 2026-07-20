@@ -1,0 +1,29 @@
+import hashlib
+
+users = {}
+
+while True:
+    print("\n===== SecureAccess =====")
+    print("1. Register")
+    print("2. Login")
+    print("3. Exit")
+
+    choice = input("Choice: ")
+
+    if choice == "1":
+        username = input("Username: ")
+        password = hashlib.sha256(input("Password: ").encode()).hexdigest()
+        users[username] = password
+        print("User registered.")
+
+    elif choice == "2":
+        username = input("Username: ")
+        password = hashlib.sha256(input("Password: ").encode()).hexdigest()
+
+        if users.get(username) == password:
+            print("Login Successful")
+        else:
+            print("Invalid Credentials")
+
+    elif choice == "3":
+        break
